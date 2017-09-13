@@ -12,7 +12,14 @@ public static class LuaBinder
 		LuaInterface_DebuggerWrap.Register(L);
 		ViewWrap.Register(L);
 		BaseWrap.Register(L);
-		ManagerWrap.Register(L);
+		Manager_LuaFramework_GameManagerWrap.Register(L);
+		Manager_LuaFramework_LuaManagerWrap.Register(L);
+		Manager_LuaFramework_PanelManagerWrap.Register(L);
+		Manager_LuaFramework_SoundManagerWrap.Register(L);
+		Manager_LuaFramework_TimerManagerWrap.Register(L);
+		Manager_LuaFramework_ThreadManagerWrap.Register(L);
+		Manager_LuaFramework_NetworkManagerWrap.Register(L);
+		Manager_LuaFramework_ResourceManagerWrap.Register(L);
 		L.BeginModule("UnityEngine");
 		UnityEngine_ComponentWrap.Register(L);
 		UnityEngine_TransformWrap.Register(L);

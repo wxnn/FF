@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 //using FluorineFx;
 
-public class DataManager:Manager
+public class DataManager:Manager<DataManager>
 {
     public bool inited = false;
    // public ASObject _app_data;

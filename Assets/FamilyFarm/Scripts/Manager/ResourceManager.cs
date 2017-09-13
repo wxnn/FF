@@ -252,7 +252,7 @@ using Ionic.Zlib;
 using LitJson;
 
 namespace LuaFramework {
-    public class ResourceManager : Manager {
+    public class ResourceManager : Manager<ResourceManager> {
         private string[] m_Variants = { };
         private AssetBundleManifest manifest;
         private AssetBundle shared, assetbundle;

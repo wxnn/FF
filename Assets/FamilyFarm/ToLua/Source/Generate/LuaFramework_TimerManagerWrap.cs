@@ -6,7 +6,7 @@ public class LuaFramework_TimerManagerWrap
 {
 	public static void Register(LuaState L)
 	{
-		L.BeginClass(typeof(LuaFramework.TimerManager), typeof(Manager));
+		L.BeginClass(typeof(LuaFramework.TimerManager), typeof(Manager<LuaFramework.TimerManager>));
 		L.RegFunction("StartTimer", StartTimer);
 		L.RegFunction("StopTimer", StopTimer);
 		L.RegFunction("AddTimerEvent", AddTimerEvent);

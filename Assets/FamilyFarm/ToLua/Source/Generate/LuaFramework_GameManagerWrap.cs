@@ -6,7 +6,7 @@ public class LuaFramework_GameManagerWrap
 {
 	public static void Register(LuaState L)
 	{
-		L.BeginClass(typeof(LuaFramework.GameManager), typeof(Manager));
+		L.BeginClass(typeof(LuaFramework.GameManager), typeof(Manager<LuaFramework.GameManager>));
 		L.RegFunction("currentState", currentState);
 		L.RegFunction("__eq", op_Equality);
 		L.RegFunction("__tostring", ToLua.op_ToString);

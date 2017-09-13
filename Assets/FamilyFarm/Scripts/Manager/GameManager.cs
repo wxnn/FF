@@ -8,7 +8,7 @@ using System.IO;
 
 
 namespace LuaFramework {
-    public class GameManager : Manager {
+    public class GameManager : Manager<GameManager> {
         protected static bool initialize = false;
         
 

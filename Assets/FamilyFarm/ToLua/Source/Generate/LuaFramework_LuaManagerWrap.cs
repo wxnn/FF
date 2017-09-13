@@ -6,7 +6,7 @@ public class LuaFramework_LuaManagerWrap
 {
 	public static void Register(LuaState L)
 	{
-		L.BeginClass(typeof(LuaFramework.LuaManager), typeof(Manager));
+		L.BeginClass(typeof(LuaFramework.LuaManager), typeof(Manager<LuaFramework.LuaManager>));
 		L.RegFunction("InitStart", InitStart);
 		L.RegFunction("DoFile", DoFile);
 		L.RegFunction("CallFunction", CallFunction);

@@ -6,7 +6,7 @@ public class LuaFramework_ResourceManagerWrap
 {
 	public static void Register(LuaState L)
 	{
-		L.BeginClass(typeof(LuaFramework.ResourceManager), typeof(Manager));
+		L.BeginClass(typeof(LuaFramework.ResourceManager), typeof(Manager<LuaFramework.ResourceManager>));
 		L.RegFunction("Initialize", Initialize);
 		L.RegFunction("GetItemConf", GetItemConf);
 		L.RegFunction("GetShopData", GetShopData);

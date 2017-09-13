@@ -6,7 +6,7 @@ public class LuaFramework_ThreadManagerWrap
 {
 	public static void Register(LuaState L)
 	{
-		L.BeginClass(typeof(LuaFramework.ThreadManager), typeof(Manager));
+		L.BeginClass(typeof(LuaFramework.ThreadManager), typeof(Manager<LuaFramework.ThreadManager>));
 		L.RegFunction("AddEvent", AddEvent);
 		L.RegFunction("__eq", op_Equality);
 		L.RegFunction("__tostring", ToLua.op_ToString);

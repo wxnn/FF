@@ -26,7 +26,7 @@ namespace LuaFramework {
     }
 
 
-    public class TimerManager : Manager {
+    public class TimerManager : Manager<TimerManager> {
         private float interval = 0;
         private List<TimerInfo> objects = new List<TimerInfo>();
 

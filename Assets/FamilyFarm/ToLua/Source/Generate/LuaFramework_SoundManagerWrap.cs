@@ -6,7 +6,7 @@ public class LuaFramework_SoundManagerWrap
 {
 	public static void Register(LuaState L)
 	{
-		L.BeginClass(typeof(LuaFramework.SoundManager), typeof(Manager));
+		L.BeginClass(typeof(LuaFramework.SoundManager), typeof(Manager<LuaFramework.SoundManager>));
 		L.RegFunction("LoadAudioClip", LoadAudioClip);
 		L.RegFunction("CanPlayBackSound", CanPlayBackSound);
 		L.RegFunction("PlayBacksound", PlayBacksound);

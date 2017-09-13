@@ -6,7 +6,7 @@ public class LuaFramework_PanelManagerWrap
 {
 	public static void Register(LuaState L)
 	{
-		L.BeginClass(typeof(LuaFramework.PanelManager), typeof(Manager));
+		L.BeginClass(typeof(LuaFramework.PanelManager), typeof(Manager<LuaFramework.PanelManager>));
 		L.RegFunction("CreatePanel", CreatePanel);
 		L.RegFunction("ClosePanel", ClosePanel);
 		L.RegFunction("havePanelOpened", havePanelOpened);

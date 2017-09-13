@@ -12,7 +12,7 @@ using System.IO;
 //using FluorineFx.Messaging.Messages;
 //using FluorineFx.IO;
 
-public class HttpManager:Manager
+public class HttpManager:Manager<HttpManager>
 {
     //public delegate void HttpReponseCallBack(ASObject data);
 

@@ -3,7 +3,7 @@ using System.Collections;
 using LuaInterface;
 
 namespace LuaFramework {
-    public class LuaManager : Manager {
+    public class LuaManager : Manager<LuaManager> {
         private LuaState lua;
         private LuaLoader loader;
         private LuaLooper loop = null;

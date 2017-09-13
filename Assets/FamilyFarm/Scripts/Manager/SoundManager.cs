@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 namespace LuaFramework {
-    public class SoundManager : Manager {
+    public class SoundManager : Manager<SoundManager> {
         private AudioSource audio;
         private Hashtable sounds = new Hashtable();
 
