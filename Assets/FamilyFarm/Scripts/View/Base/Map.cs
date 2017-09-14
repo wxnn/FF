@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using UnityEngine.EventSystems;
 
 public class Map :View
 {
@@ -104,6 +105,10 @@ public class Map :View
 
     void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         if (currentTool == null)
         {
             return;

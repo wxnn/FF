@@ -22,9 +22,9 @@ public class MapObject:Base
     private bool select = false;
     public int sizeX;
     public int sizeZ;
-    private GameObject moveToolUIPrefab;
-    private GameObject moveUI;
-    private GameObject canvas3D;
+    private float _height = -1;
+    public int upPos = 5;
+
 
     public void init(Hashtable data)
     {
@@ -60,7 +60,7 @@ public class MapObject:Base
     {
         set
         {
-            if (select)
+            if (select && value)
             {
                 return;
             }
@@ -68,7 +68,7 @@ public class MapObject:Base
             Vector3 pos = model.transform.position;
             if (value)
             {
-                pos.y = 5;
+                pos.y = upPos;
                 AddMoveToolUI();
             }
             else
@@ -83,24 +83,35 @@ public class MapObject:Base
         }
     }
 
+    public float height
+    {
+        get
+        {
+            if(_height == -1) { 
+                Renderer render = model.GetComponent<Renderer>();
+                if(render == null)
+                {
+                    foreach(Transform child in model.transform)
+                    {
+                        render = child.GetComponent<Renderer>();
+                        _height = Math.Max(_height, render.bounds.size.y);
+                    }
+                }else
+                {
+                    _height = render.bounds.size.y;
+                }
+            }
+            return _height;
+        }
+    }
+
     private void AddMoveToolUI()
     {
-        if(moveToolUIPrefab == null)
-        {
-            moveToolUIPrefab = (GameObject) Resources.Load("MoveToolUI");
-        }
-        moveUI = (GameObject)Instantiate(moveToolUIPrefab);
-        canvas3D = GameObject.Find("Canvas3D");
-        moveUI.transform.SetParent(canvas3D.transform);
-        moveUI.transform.localRotation = new Quaternion(0, 45, 0, 0);
-        moveUI.transform.position = this.transform.position;
+        MoveToolUI.Instance.target = this;
     }
 
     private void RemoveMoveToolUI()
     {
-        if (moveUI)
-        {
-            Destroy(moveUI.gameObject);
-        }
+        MoveToolUI.Instance.target = null;
     }
 }
